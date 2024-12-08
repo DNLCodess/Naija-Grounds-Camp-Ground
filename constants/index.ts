@@ -47,21 +47,26 @@ export const FEATURES = [
 ];
 
 // FOOTER SECTION
+// Updated FOOTER_LINKS structure
 export const FOOTER_LINKS = [
   {
     title: "Learn More",
     links: [
-      "About Hilink",
-      "Press Releases",
-      "Environment",
-      "Jobs",
-      "Privacy Policy",
-      "Contact Us",
+      { label: "About Hilink", href: "/" },
+      { label: "Press Releases", href: "/" },
+      { label: "Environment", href: "/" },
+      { label: "Jobs", href: "/" },
+      { label: "Privacy Policy", href: "/" },
+      { label: "Contact Us", href: "/" },
     ],
   },
   {
     title: "Our Community",
-    links: ["Climbing xixixi", "Hiking hilink", "Hilink kinthill"],
+    links: [
+      { label: "Climbing xixixi", href: "/" },
+      { label: "Hiking hilink", href: "/" },
+      { label: "Hilink kinthill", href: "/" },
+    ],
   },
 ];
 

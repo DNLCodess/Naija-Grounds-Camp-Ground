@@ -1,5 +1,6 @@
 import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -22,7 +23,10 @@ const Footer = () => {
               <FooterColumn title={columns.title} key={`footer-links-${index}`}>
                 <ul className="regular-14 flex flex-col gap-4 text-gray-30">
                   {columns.links.map((link, linkIndex) => (
-                    <li key={`footer-link-${linkIndex}`}>{link.label}</li>
+                    <li key={`footer-link-${linkIndex}`}>
+                      <a href={link.href}>{link.label}</a>{" "}
+                      {/* Use link.href for actual navigation */}
+                    </li>
                   ))}
                 </ul>
               </FooterColumn>
@@ -48,21 +52,12 @@ const Footer = () => {
             </div>
 
             <div className="flex flex-col gap-5">
-              <FooterColumn title={SOCIALS.title} key="footer-socials">
+              <FooterColumn title={SOCIALS.title}>
                 <ul className="regular-14 flex gap-4 text-gray-30">
-                  {SOCIALS.links.map((link, socialIndex) => (
-                    <li key={`social-link-${socialIndex}`}>
-                      {link.icon ? ( // Check if the icon exists
-                        <Image
-                          src={link.icon}
-                          alt={`${link.label}-icon`}
-                          width={24}
-                          height={24}
-                        />
-                      ) : (
-                        <span>{link.label}</span> // Fallback if no icon
-                      )}
-                    </li>
+                  {SOCIALS.links.map((link) => (
+                    <Link href="/" key={link}>
+                      <Image src={link} alt="logo" width={24} height={24} />
+                    </Link>
                   ))}
                 </ul>
               </FooterColumn>
